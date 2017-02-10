@@ -40,7 +40,7 @@ const Checkout = React.createClass({
   onSubmit: function(event) {
     const self = this;
     event.preventDefault();
-
+    
     // prevent duplicate charges by disabling submit button
     this.setState({ submitDisabled: true, paymentError: null });
     // send form here
@@ -51,7 +51,7 @@ const Checkout = React.createClass({
       else {
         self.setState({ paymentComplete: true, submitDisabled: false, token: response.id });
         // make request to your server here!
-
+          
         axios.post('auth/checkout', {
           stripeToken: response.id,
           //amount

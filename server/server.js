@@ -3,22 +3,32 @@ const express = require('express');
 const https = require('https');
 const mongoose = require('mongoose');
 const app = express();
-
 const ssl = require('./middleware/ssl.js');
 const config = require('./config/config');
 const api = require('./api/api');
+const session = require('express-session');
 const auth = require('./auth/auth');
 
 // Connect to database
 mongoose.connect(config.database.local);
 
-// Middleware
+// app.use(express.cookieParser());
+// app.use(express.session({secret: '1234567890QWERTY'}));
+
+
+app.use(session({
+  secret: 'keyboard cat',
+  resave: false,
+  saveUninitialized: true
+}))
+
+// // Middleware
 require('./middleware/middleware')(app);
 
-// API Routing
+// // API Routing
 app.use('/api', api);
 
-// Authentication
+// // Authentication
 app.use('/auth', auth);
 
 require('./middleware/webpack')(app, express);

@@ -1,8 +1,6 @@
 import React, { PropTypes } from 'react';
 import CartItem from '../CartItem/CartItem';
-
 import styles from './BeerCart.css';
-
 import RaisedButton from 'material-ui/RaisedButton';
 
 const cartSize = 4;
@@ -15,7 +13,7 @@ const BeerCart = (props) => {
   const cartDetailsHandler = cartItems.length ?
     <h4>Your Cart has {cartItems.length} / 4 selections</h4>
     : <h4>Your Cart is Empty!</h4>;
-
+    
   const button = props.inCheckout ?
     null
     : <RaisedButton className={styles.button} primary onClick={props.checkout} label="Checkout" />;
@@ -26,11 +24,11 @@ const BeerCart = (props) => {
     <div className={styles.wrapper}>
       <div className={styles.details}>
         {cartDetailsHandler}
+        <button>saveFlight</button>
         {checkout}
       </div>
       <div className={styles.cartRow}>
       {cartItems}
-
       </div>
     </div>
   );

@@ -19,6 +19,7 @@ var getUser = function(req, res) {
     if (err) {
       throw err; 
     } else {
+      console.log(res.json.users)
       res.json(users);
     }
   });
@@ -81,7 +82,7 @@ var logIn = function(req, res) {
           });
           res.json({
             success: true,
-            message: 'Authentication successful',
+            message: 'Authentication successful good job',
             token
           });
         } else {
