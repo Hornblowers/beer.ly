@@ -20,6 +20,9 @@ class Nav extends React.Component {
           <h1>
             <Link to="/" className={logo}>Beer.ly</Link>
           </h1>
+          <h3>
+            <a href='https://localhost:8008/oauth2/auth'>Log In</a>
+          </h3>
           <div className={styles.testing}>
           {this.props.cart.length > 0 ? 
             <BeerCart 
