@@ -10,7 +10,6 @@ const CartItem = (props) => {
     		<img className={styles.xButtonImage} src="https://s3-us-west-1.amazonaws.com/beer.ly/beers/grey-x.svg" />
     	</div>
       <div className={styles.title}>
-        {props.beer.name}
       </div>
       <img src={props.beer.image} className={styles.image} />
     </div>

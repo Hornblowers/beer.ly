@@ -14,8 +14,39 @@
   height: 100px;
 }
 
-.button {
+button {
+  font-size: 12px; 
+  font-size: 1.2rem; 
+  padding: 5px 15px; 
+  border-radius: 25px; 
+  border: none; 
+  display: inline-block; 
+  color: #2e2e2e; 
+  text-decoration: none; 
+  background-color: rgba(0, 0, 0, 0.05); 
+  margin: 2px 0; 
+  margin-top: 4px;
+}
 
+button:hover { 
+  text-decoration: none; 
+  background-color: rgba(0, 0, 0, 0.1); 
+
+}
+
+button:focus { 
+  outline: none; 
+}
+
+button:after { 
+  width: 0; height: 0; 
+  border-left: 4px solid transparent; 
+  border-right: 4px solid transparent; 
+  border-bottom: 4px solid transparent; 
+  content: ""; 
+  position: relative; 
+  top: -10px; 
+  right: -4px; 
 }
 
 /*.wrapper {
