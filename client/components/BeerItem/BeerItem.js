@@ -7,6 +7,8 @@ import Dialog from 'material-ui/Dialog';
 import FlatButton from 'material-ui/FlatButton';
 import { default as Fade } from 'react-fade';
 import LazyLoad from 'react-lazy-load';
+import Reviews from './../Reviews/Reviews';
+import BeerSuggestions from './../BeerSuggestions/BeerSuggestions';
 
 // import BeerInfo from './BengaliBeerData_691381.json';
 
@@ -63,6 +65,18 @@ class BeerItem extends React.Component {
       return 'http://i.giphy.com/vbW83rOm8JZYI.gif';
     }
   }
+
+  // reviewsHandler() {
+  //   if (this.state.info) {
+  //     return (
+  //       <div>
+  //         {this.state.info.checkins.items.map((item) => {
+  //           <div>{item.rating_score}</div>
+  //         })}
+  //       </div>
+  //     )
+  //   }
+  // }
 
   handleError(error) {
     console.log(error);
@@ -180,6 +194,12 @@ class BeerItem extends React.Component {
                 <br />
               </div>
               <div>{this.props.beer.beer_description}</div>
+              {this.state.info !== null ? 
+                <div>
+                  <BeerSuggestions suggestions={this.state.info.similar} />
+                  <Reviews checkins={this.state.info.checkins} />
+                </div>
+                :null}
             </Dialog>
           </IconButton>
         </div>

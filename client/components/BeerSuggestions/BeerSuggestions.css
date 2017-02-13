@@ -1,0 +1,10 @@
+.preScrollableFixed {
+  width: 700px;
+  height: 300px;
+  overflow-x: scroll;
+  overflow-y: hidden;
+}
+
+.suggestionWidth {
+  width: 1000px;
+}
